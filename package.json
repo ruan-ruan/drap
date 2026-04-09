@@ -1,11 +1,30 @@
 {
-  "name": "drap",
+  "name": "@ruan-feiyang/drap",
   "version": "1.0.0",
   "description": "拖拽排序插件，支持 React 18 和 Vue 3",
-  "main": "index.js",
+  "main": "dist/core/index.js",
+  "module": "dist/core/index.mjs",
+  "types": "dist/core/index.d.ts",
+  "exports": {
+    "./react": {
+      "import": "./dist/react/index.mjs",
+      "require": "./dist/react/index.js",
+      "types": "./dist/react/index.d.ts"
+    },
+    "./vue": {
+      "import": "./dist/vue/index.mjs",
+      "require": "./dist/vue/index.js",
+      "types": "./dist/vue/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core/index.mjs",
+      "require": "./dist/core/index.js",
+      "types": "./dist/core/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc",
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .ts,.tsx,.vue"
   },
@@ -19,6 +38,11 @@
   ],
   "author": "",
   "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "vue": "^3.0.0"
+  },
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -32,5 +56,8 @@
     "typescript": "^5.0.0",
     "vite": "^4.0.0",
     "vue": "^3.3.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

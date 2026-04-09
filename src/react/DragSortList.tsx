@@ -48,7 +48,7 @@ export const DragSortList: React.FC<DragSortListProps> = ({
   }, [items]);
 
   // 处理拖拽结束
-  const handleDragEnd = useCallback((e: React.DragEvent<HTMLElement>) => {
+  const handleDragEnd = useCallback((_e: React.DragEvent<HTMLElement>) => {
     setIsDragging(false);
     setDraggingIndex(null);
     
